@@ -96,7 +96,12 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.json('error');
 });
+process.on('uncaughtException', function(err) {
+    // handle the error safely
+    console.log(err)
+})
+
+app.listen(5000,"0.0.0.0");
 
 module.exports = app;
 
-app.listen(5000,"0.0.0.0");
