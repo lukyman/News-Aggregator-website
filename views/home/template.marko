@@ -1,0 +1,282 @@
+<include("../layout/template.marko")>
+<@body>
+        <div class="row">
+            <div class="col l6 col m12 col s12">
+                    <div class="sidbar-box z-depth-1">
+                            <div class="sidebar-title">Top Stories</div>
+                             
+                            <ul>
+                            <for(category in data.local | status-var=loop) >
+                                <li>
+                                    <a onclick="openSource('${category.linkid}')"> ${category.title[0]}</a>
+                                </li>
+                                
+                                 </for>
+                            </ul>
+                        </div>
+           </div>
+
+           <div class="col l5 col m12 col s12">
+                        <!-- Sidebar -->
+                        <div class="sidbar-box z-depth-1">
+                            <div class="sidebar-title"></div>
+                              
+                                <!-- responsive-card -->
+                                <ins class="adsbygoogle"
+                                    style="display:block"
+                                    data-ad-client="ca-pub-9986443249641192"
+                                    data-ad-slot="6876975061"
+                                    data-ad-format="auto"></ins>
+                                <script>
+                                (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                        </div>
+          </div>
+
+                    
+        </div>
+
+        <div class="row">
+        <div class="title">Local</div>
+        <for(category in data.local | status-var=loop) >
+              
+               
+ <div class="col l4 col m6 col s12">
+                        <div class="card-container"> 
+                        
+                            <!-- Vertical News Box -->
+                            <div class="news vertical ">
+                            <div class="media-name">
+                             <p>${category.meta.title}</p>
+                            </div>
+                                    <!-- News Image -->    
+                                <div class="news-image">
+                                        <img class="responsive-img" onerror="this.style.display='none';" src="${category.media_image}"  alt="news Image">
+                                </div>
+                                    <!-- News Description -->
+                                <div class="news-description">
+                                        <div class="news-time">
+                                            <i class="fa fa-clock-o"></i> <time class="timeago" datetime="${category.pubDate[0]}"> </time>
+                                        </div>
+                                        <div class="news-title" onclick="openSource('${category.linkid}')"><h1>${category.title[0]} </h1></div>
+                                        <div class="news-content truncate" id="wrapper">${category.description[0].replace(/(<([^>]+)>)/ig,"")} </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                          
+                    </div>                                                                                                                                                                                                                                                                                                                                   
+                   
+                </for>     
+        </div>
+<if(data.international)>
+        <div class="row">
+        <div class="title">World</div>
+        <for(category in data.international | status-var=loop) >
+                    
+                     <div class="col l4 col m6 col s12">
+                        <div class="card-container"> 
+                        
+                            <!-- Vertical News Box -->
+                            <div class="news vertical ">
+                            <div class="media-name">
+                             <p>${category.meta.title}</p>
+                            </div>
+                                    <!-- News Image -->    
+                                <div class="news-image">
+                                        <img class="responsive-img" onerror="this.style.display='none';" src="${category.media_image}"  alt="news Image">
+                                </div>
+                                    <!-- News Description -->
+                                <div class="news-description">
+                                        <div class="news-time">
+                                            <i class="fa fa-clock-o"></i> <time class="timeago" datetime="${category.pubDate[0]}"> </time>
+                                        </div>
+                                        <div class="news-title" onclick="openSource('${category.linkid}')"><h1>${category.title[0]} </h1></div>
+                                        <div class="news-content truncate" id="wrapper">${category.description[0].replace(/(<([^>]+)>)/ig,"")} </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                          
+                    </div>
+    	                                                                                                                                                                                                                                                                                                                                
+                   
+                </for>     
+        </div>
+    </if>
+    <if(data.business)>
+    <div class="row">
+        <div class="title">Business</div>
+        <for(category in data.business | status-var=loop) >
+                    
+                    <div class="col l4 col m6 col s12">
+                        <div class="card-container"> 
+                        
+                            <!-- Vertical News Box -->
+                            <div class="news vertical ">
+                            <div class="media-name">
+                             <p>${category.meta.title}</p>
+                            </div>
+                                    <!-- News Image -->    
+                                <div class="news-image">
+                                        <img class="responsive-img" onerror="this.style.display='none';" src="${category.media_image}"  alt="news Image">
+                                </div>
+                                    <!-- News Description -->
+                                <div class="news-description">
+                                        <div class="news-time">
+                                            <i class="fa fa-clock-o"></i> <time class="timeago" datetime="${category.pubDate[0]}"> </time>
+                                        </div>
+                                        <div class="news-title" onclick="openSource('${category.linkid}')"><h1>${category.title[0]} </h1></div>
+                                        <div class="news-content truncate" id="wrapper">${category.description[0].replace(/(<([^>]+)>)/ig,"")} </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                          
+                    </div>
+    	                                                                                                                                                                                                                                                                                                                                
+                   
+                </for>     
+        </div>
+</if>
+    <if(data.technology)>
+        <div class="row">
+        <div class="title">Technology</div>
+        <for(category in data.technology | status-var=loop) >
+                    
+                     <div class="col l4 col m6 col s12">
+                        <div class="card-container"> 
+                        
+                            <!-- Vertical News Box -->
+                            <div class="news vertical ">
+                            <div class="media-name">
+                             <p>${category.meta.title}</p>
+                            </div>
+                                    <!-- News Image -->    
+                                <div class="news-image">
+                                        <img class="responsive-img" onerror="this.style.display='none';" src="${category.media_image}"  alt="news Image">
+                                </div>
+                                    <!-- News Description -->
+                                <div class="news-description">
+                                        <div class="news-time">
+                                            <i class="fa fa-clock-o"></i> <time class="timeago" datetime="${category.pubDate[0]}"> </time>
+                                        </div>
+                                        <div class="news-title" onclick="openSource('${category.linkid}')"><h1>${category.title[0]} </h1></div>
+                                        <div class="news-content truncate" id="wrapper">${category.description[0].replace(/(<([^>]+)>)/ig,"")} </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                          
+                    </div>
+    	                                                                                                                                                                                                                                                                                                                                
+                   
+                </for>     
+        </div>
+    </if>
+    <if(data.sports)>
+    <div class="row">
+        <div class="title">Sports</div>
+        <for(category in data.sports | status-var=loop) >
+                    
+                    <div class="col l4 col m6 col s12">
+                        <div class="card-container"> 
+                        
+                            <!-- Vertical News Box -->
+                            <div class="news vertical ">
+                            <div class="media-name">
+                             <p>${category.meta.title}</p>
+                            </div>
+                                    <!-- News Image -->    
+                                <div class="news-image">
+                                        <img class="responsive-img" onerror="this.style.display='none';" src="${category.media_image}"  alt="news Image">
+                                </div>
+                                    <!-- News Description -->
+                                <div class="news-description">
+                                        <div class="news-time">
+                                            <i class="fa fa-clock-o"></i> <time class="timeago" datetime="${category.pubDate[0]}"> </time>
+                                        </div>
+                                        <div class="news-title" onclick="openSource('${category.linkid}')"><h1>${category.title[0]} </h1></div>
+                                        <div class="news-content truncate" id="wrapper">${category.description[0].replace(/(<([^>]+)>)/ig,"")} </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                          
+                    </div>                                                                                                                                                                                                                                                                                                      
+                   
+                </for>     
+        </div>
+    </if>
+    <if(data.lifestyle)>
+    <div class="row">
+        <div class="title">Lifestyle</div>
+        <for(category in data.lifestyle | status-var=loop) >
+                    
+                   <div class="col l4 col m6 col s12">
+                        <div class="card-container"> 
+                        
+                            <!-- Vertical News Box -->
+                            <div class="news vertical ">
+                            <div class="media-name">
+                             <p>${category.meta.title}</p>
+                            </div>
+                                    <!-- News Image -->    
+                                <div class="news-image">
+                                        <img class="responsive-img" onerror="this.style.display='none';" src="${category.media_image}"  alt="news Image">
+                                </div>
+                                    <!-- News Description -->
+                                <div class="news-description">
+                                        <div class="news-time">
+                                            <i class="fa fa-clock-o"></i> <time class="timeago" datetime="${category.pubDate[0]}"> </time>
+                                        </div>
+                                        <div class="news-title" onclick="openSource('${category.linkid}')"><h1>${category.title[0]} </h1></div>
+                                        <div class="news-content truncate" id="wrapper">${category.description[0].replace(/(<([^>]+)>)/ig,"")} </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                          
+                    </div>
+    	                                                                                                                                                                                                                                                                                                                                
+                   
+                </for>     
+        </div>
+    </if>
+ <if(data.entertainment)>
+    <div class="row">
+        <div class="title">Entertaiment</div>
+        <for(category in data.entertainment | status-var=loop) >
+                    
+                   <div class="col l4 col m6 col s12">
+                        <div class="card-container"> 
+                        
+                            <!-- Vertical News Box -->
+                            <div class="news vertical ">
+                            <div class="media-name">
+                             <p>${category.meta.title}</p>
+                            </div>
+                                    <!-- News Image -->    
+                                <div class="news-image">
+                                        <img class="responsive-img" onerror="this.style.display='none';" src="${category.media_image}"  alt="news Image">
+                                </div>
+                                    <!-- News Description -->
+                                <div class="news-description">
+                                        <div class="news-time">
+                                            <i class="fa fa-clock-o"></i> <time class="timeago" datetime="${category.pubDate[0]}"> </time>
+                                        </div>
+                                        <div class="news-title" onclick="openSource('${category.linkid}')"><h1>${category.title[0]} </h1></div>
+                                        <div class="news-content truncate" id="wrapper">${category.description[0].replace(/(<([^>]+)>)/ig,"")} </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                          
+                    </div>
+    	                                                                                                                                                                                                                                                                                                                                
+                   
+                </for>     
+        </div>
+    </if>
+    </@body>
+</include>
