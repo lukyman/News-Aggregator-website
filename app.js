@@ -5,6 +5,7 @@ var logger = require('morgan');
 //var cookieParser = require('cookie-parser');
 //var bodyParser = require('body-parser');
 var sm = require('sitemap');
+var robots = require('robots.txt');
 
 require('marko/node-require');
 var markoExpress = require('marko/express');
@@ -55,6 +56,7 @@ app.use(logger('dev'));
 //app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '/public')));
 app.use('/public', express.static(path.join(__dirname + '/public')));
+app.use(robots(__dirname + '/robots.txt'));
 
 app.use('/sitemap.xml', function (req, res) {
   sitemap.toXML(function (err, xml) {
