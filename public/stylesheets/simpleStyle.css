@@ -58,7 +58,7 @@
   margin-bottom: 10px;
 }
 
-.card-container h1{
+.card-container h2{
       font-size: 16px;
     line-height: 19px;
     font-weight: bold;
@@ -96,8 +96,16 @@ background: antiquewhite;
 body{
   background:#fff;
 }
-
-
+.top-story h1{
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.sidbar-box a {
+    
+    padding: 0px 14px;
+}
 /*
 // in the second loop
   

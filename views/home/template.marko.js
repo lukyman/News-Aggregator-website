@@ -18,14 +18,14 @@ function render(input, out) {
       _target: template_template,
       body: {
           renderBody: function renderBody(out) {
-            out.w("<div class=\"row\"><div class=\"col l6 col m12 col s12\"><div class=\"sidbar-box z-depth-1\"><div class=\"sidebar-title\">Top Stories</div><ul>");
+            out.w("<div class=\"row\"><div class=\"col l6 col m12 col s12 top-story\"><div class=\"sidbar-box z-depth-1\"><div class=\"sidebar-title\">Top Stories</div><ul>");
 
             marko_forEachWithStatusVar(data.local, function(category, loop) {
               out.w("<li><a onclick=\"openSource('" +
                 marko_escapeXmlAttr(category.linkid) +
-                "')\"> " +
+                "')\"><h1> " +
                 marko_escapeXml(category.title[0]) +
-                "</a></li>");
+                "</h1></a></li>");
             });
 
             out.w("</ul></div></div><div class=\"col l5 col m12 col s12\"><div class=\"sidbar-box z-depth-1\"><div class=\"sidebar-title\"></div><ins class=\"adsbygoogle\" style=\"display:block\" data-ad-client=\"ca-pub-9986443249641192\" data-ad-slot=\"6876975061\" data-ad-format=\"auto\"></ins><script>\r\n                                (adsbygoogle = window.adsbygoogle || []).push({});\r\n                                </script></div></div></div><div class=\"row\"><div class=\"title\">Local</div>");
@@ -39,9 +39,9 @@ function render(input, out) {
                 marko_escapeXmlAttr(category.pubDate[0]) +
                 "\"> </time></div><div class=\"news-title\" onclick=\"openSource('" +
                 marko_escapeXmlAttr(category.linkid) +
-                "')\"><h1>" +
+                "')\"><h2>" +
                 marko_escapeXml(category.title[0]) +
-                " </h1></div><div class=\"news-content truncate\" id=\"wrapper\">" +
+                " </h2></div><div class=\"news-content truncate\" id=\"wrapper\">" +
                 marko_escapeXml(category.description[0].replace(/(<([^>]+)>)/gi, "")) +
                 " </div></div></div></div></div> ");
             });

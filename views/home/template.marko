@@ -1,14 +1,14 @@
 <include("../layout/template.marko")>
 <@body>
         <div class="row">
-            <div class="col l6 col m12 col s12">
+            <div class="col l6 col m12 col s12 top-story">
                     <div class="sidbar-box z-depth-1">
                             <div class="sidebar-title">Top Stories</div>
                              
                             <ul>
                             <for(category in data.local | status-var=loop) >
                                 <li>
-                                    <a onclick="openSource('${category.linkid}')"> ${category.title[0]}</a>
+                                    <a onclick="openSource('${category.linkid}')"><h1> ${category.title[0]}</h1></a>
                                 </li>
                                 
                                  </for>
@@ -58,7 +58,7 @@
                                         <div class="news-time">
                                             <i class="fa fa-clock-o"></i> <time class="timeago" datetime="${category.pubDate[0]}"> </time>
                                         </div>
-                                        <div class="news-title" onclick="openSource('${category.linkid}')"><h1>${category.title[0]} </h1></div>
+                                        <div class="news-title" onclick="openSource('${category.linkid}')"><h2>${category.title[0]} </h2></div>
                                         <div class="news-content truncate" id="wrapper">${category.description[0].replace(/(<([^>]+)>)/ig,"")} </div>
                                 </div>
                             </div>
