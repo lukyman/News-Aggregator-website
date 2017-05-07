@@ -28,7 +28,7 @@ function render(input, out) {
                 "</h1></a></li>");
             });
 
-            out.w("</ul></div></div><div class=\"col l5 col m12 col s12\"><div class=\"sidbar-box z-depth-1\"><div class=\"sidebar-title\"></div><ins class=\"adsbygoogle\" style=\"display:block\" data-ad-client=\"ca-pub-9986443249641192\" data-ad-slot=\"6876975061\" data-ad-format=\"auto\"></ins><script>\r\n                                (adsbygoogle = window.adsbygoogle || []).push({});\r\n                                </script></div></div></div><div class=\"row\"><div class=\"title\">Local</div>");
+            out.w("</ul></div></div><div class=\"col l5 col m12 col s12\"><div class=\"sidbar-box z-depth-1\"><div class=\"sidebar-title\"></div><script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script><ins class=\"adsbygoogle\" style=\"display:block\" data-ad-client=\"ca-pub-9986443249641192\" data-ad-slot=\"6876975061\" data-ad-format=\"auto\"></ins><script>\r\n                                (adsbygoogle = window.adsbygoogle || []).push({});\r\n                                </script></div></div></div><div class=\"row\"><div class=\"title\"><a href=\"/local\">Local</a></div>");
 
             marko_forEachWithStatusVar(data.local, function(category, loop) {
               out.w("<div class=\"col l4 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
@@ -49,7 +49,7 @@ function render(input, out) {
             out.w(" </div>");
 
             if (data.international) {
-              out.w("<div class=\"row\"><div class=\"title\">World</div>");
+              out.w("<div class=\"row\"><div class=\"title\"><a href=\"/world\">World</a></div>");
 
               marko_forEachWithStatusVar(data.international, function(category, loop) {
                 out.w("<div class=\"col l4 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
@@ -71,7 +71,7 @@ function render(input, out) {
             }
 
             if (data.business) {
-              out.w("<div class=\"row\"><div class=\"title\">Business</div>");
+              out.w("<div class=\"row\"><div class=\"title\"><a href=\"/business\">Business</a></div>");
 
               marko_forEachWithStatusVar(data.business, function(category, loop) {
                 out.w("<div class=\"col l4 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
@@ -93,7 +93,7 @@ function render(input, out) {
             }
 
             if (data.technology) {
-              out.w("<div class=\"row\"><div class=\"title\">Technology</div>");
+              out.w("<div class=\"row\"><div class=\"title\"><a href=\"/technology\">Technology</a></div>");
 
               marko_forEachWithStatusVar(data.technology, function(category, loop) {
                 out.w("<div class=\"col l4 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
@@ -115,7 +115,7 @@ function render(input, out) {
             }
 
             if (data.sports) {
-              out.w("<div class=\"row\"><div class=\"title\">Sports</div>");
+              out.w("<div class=\"row\"><div class=\"title\"><a href=\"/sports\">Sports</a></div>");
 
               marko_forEachWithStatusVar(data.sports, function(category, loop) {
                 out.w("<div class=\"col l4 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
@@ -137,7 +137,7 @@ function render(input, out) {
             }
 
             if (data.lifestyle) {
-              out.w("<div class=\"row\"><div class=\"title\">Lifestyle</div>");
+              out.w("<div class=\"row\"><div class=\"title\"><a href=\"/lifestyle\">Lifestyle</a></div>");
 
               marko_forEachWithStatusVar(data.lifestyle, function(category, loop) {
                 out.w("<div class=\"col l4 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
@@ -159,7 +159,7 @@ function render(input, out) {
             }
 
             if (data.entertainment) {
-              out.w("<div class=\"row\"><div class=\"title\">Entertaiment</div>");
+              out.w("<div class=\"row\"><div class=\"title\"><a href=\"/entertainment\">Entertaiment</a></div>");
 
               marko_forEachWithStatusVar(data.entertainment, function(category, loop) {
                 out.w("<div class=\"col l4 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +

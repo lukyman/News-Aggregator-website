@@ -63,6 +63,7 @@
     line-height: 19px;
     font-weight: bold;
     letter-spacing: 2px;
+    cursor: pointer;
 }
 .card-container img.responsive-img {
     max-width: 100%;
