@@ -46,7 +46,7 @@ function render(input, out) {
                 " </div></div></div></div></div> ");
             });
 
-            out.w(" </div>");
+            out.w(" <div class=\"col l4 col m6 col s12\"><div class=\"sidbar-box z-depth-1\"><div class=\"sidebar-title\"></div><script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script><ins class=\"adsbygoogle\" style=\"display:block\" data-ad-client=\"ca-pub-9986443249641192\" data-ad-slot=\"6876975061\" data-ad-format=\"auto\"></ins><script>\r\n                                (adsbygoogle = window.adsbygoogle || []).push({});\r\n                                </script></div></div> </div>");
 
             if (data.international) {
               out.w("<div class=\"row\"><div class=\"title\"><a href=\"/world\">World</a></div>");
@@ -67,7 +67,7 @@ function render(input, out) {
                   " </div></div></div></div></div>");
               });
 
-              out.w(" </div>");
+              out.w(" <div class=\"col l4 col m6 col s12\"><div class=\"sidbar-box z-depth-1\"><div class=\"sidebar-title\"></div><script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script><ins class=\"adsbygoogle\" style=\"display:block\" data-ad-client=\"ca-pub-9986443249641192\" data-ad-slot=\"6876975061\" data-ad-format=\"auto\"></ins><script>\r\n                                (adsbygoogle = window.adsbygoogle || []).push({});\r\n                                </script></div></div> </div>");
             }
 
             if (data.business) {
@@ -89,7 +89,7 @@ function render(input, out) {
                   " </div></div></div></div></div>");
               });
 
-              out.w(" </div>");
+              out.w(" <div class=\"col l4 col m6 col s12\"><div class=\"sidbar-box z-depth-1\"><div class=\"sidebar-title\"></div><script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script><ins class=\"adsbygoogle\" style=\"display:block\" data-ad-client=\"ca-pub-9986443249641192\" data-ad-slot=\"6876975061\" data-ad-format=\"auto\"></ins><script>\r\n                                (adsbygoogle = window.adsbygoogle || []).push({});\r\n                                </script></div></div> </div>");
             }
 
             if (data.technology) {
@@ -111,7 +111,7 @@ function render(input, out) {
                   " </div></div></div></div></div>");
               });
 
-              out.w(" </div>");
+              out.w(" <div class=\"col l4 col m6 col s12\"><div class=\"sidbar-box z-depth-1\"><div class=\"sidebar-title\"></div><script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script><ins class=\"adsbygoogle\" style=\"display:block\" data-ad-client=\"ca-pub-9986443249641192\" data-ad-slot=\"6876975061\" data-ad-format=\"auto\"></ins><script>\r\n                                (adsbygoogle = window.adsbygoogle || []).push({});\r\n                                </script></div></div> </div>");
             }
 
             if (data.sports) {
@@ -133,7 +133,7 @@ function render(input, out) {
                   " </div></div></div></div></div> ");
               });
 
-              out.w(" </div>");
+              out.w(" <div class=\"col l4 col m6 col s12\"><div class=\"sidbar-box z-depth-1\"><div class=\"sidebar-title\"></div><script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script><ins class=\"adsbygoogle\" style=\"display:block\" data-ad-client=\"ca-pub-9986443249641192\" data-ad-slot=\"6876975061\" data-ad-format=\"auto\"></ins><script>\r\n                                (adsbygoogle = window.adsbygoogle || []).push({});\r\n                                </script></div></div> </div>");
             }
 
             if (data.lifestyle) {
@@ -155,7 +155,7 @@ function render(input, out) {
                   " </div></div></div></div></div>");
               });
 
-              out.w(" </div>");
+              out.w(" <div class=\"col l4 col m6 col s12\"><div class=\"sidbar-box z-depth-1\"><div class=\"sidebar-title\"></div><script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script><ins class=\"adsbygoogle\" style=\"display:block\" data-ad-client=\"ca-pub-9986443249641192\" data-ad-slot=\"6876975061\" data-ad-format=\"auto\"></ins><script>\r\n                                (adsbygoogle = window.adsbygoogle || []).push({});\r\n                                </script></div></div> </div>");
             }
 
             if (data.entertainment) {
@@ -177,7 +177,7 @@ function render(input, out) {
                   " </div></div></div></div></div>");
               });
 
-              out.w(" </div>");
+              out.w(" <div class=\"col l4 col m6 col s12\"><div class=\"sidbar-box z-depth-1\"><div class=\"sidebar-title\"></div><script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script><ins class=\"adsbygoogle\" style=\"display:block\" data-ad-client=\"ca-pub-9986443249641192\" data-ad-slot=\"6876975061\" data-ad-format=\"auto\"></ins><script>\r\n                                (adsbygoogle = window.adsbygoogle || []).push({});\r\n                                </script></div></div> </div>");
             }
           }
         }
