@@ -29,9 +29,9 @@ function render(input, out) {
                 marko_escapeXmlAttr(category.pubDate[0]) +
                 "\"> </time></div><div class=\"news-title\" onclick=\"openSource('" +
                 marko_escapeXmlAttr(category.linkid) +
-                "')\"><h2>" +
+                "')\"><h2><a>" +
                 marko_escapeXml(category.title[0]) +
-                " </h2></div><div class=\"news-content truncate\" id=\"wrapper\">" +
+                "</a> </h2></div><div class=\"news-content truncate\" id=\"wrapper\">" +
                 marko_escapeXml(category.description[0].replace(/(<([^>]+)>)/gi, "")) +
                 " </div></div></div></div></div>");
             });
