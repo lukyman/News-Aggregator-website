@@ -104,7 +104,7 @@ process.on('uncaughtException', function(err) {
     console.log(err)
 })
 
-app.listen(5000,"0.0.0.0");
+app.listen(5500,"0.0.0.0");
 
 module.exports = app;
 
