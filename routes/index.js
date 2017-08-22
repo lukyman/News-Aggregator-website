@@ -37,7 +37,8 @@ var pages = {
   "technology": require('../views/technology/template.marko'),
   "science": require('../views/science/template.marko'),
   "entertainment": require('../views/entertainment/template.marko'),
-  "sports":require('../views/sports/template.marko'),
+  "sports": require('../views/sports/template.marko'),
+  "business": require('../views/business/template.marko')
 }
 
 /*router.get('/:feedkey', function (req, res, next) {
