@@ -1,0 +1,35 @@
+<include("../layout/template.marko")>
+<@body>
+        <div class="row">
+  
+        <for(category in data.feed | status-var=loop) >
+                   
+                    <div class="col l8 col m8 col s12">
+                        <div class="card-container"> 
+                        
+                            <!-- Vertical News Box -->
+                            <div class="news vertical ">
+                            <div class="media-name">
+                             <p>${category.meta.title}</p>
+                            </div>
+                                    <!-- News Image -->    
+                                <div class="news-image">
+                                        <img class="responsive-img" onerror="this.style.display='none';" src="${category.media_image}"  alt="news Image">
+                                </div>
+                                    <!-- News Description -->
+                                <div class="news-description">
+                                        <div class="news-time">
+                                            <i class="fa fa-clock-o"></i> <time class="timeago" datetime="${category.pubDate[0]}"> </time>
+                                        </div>
+                                        <div class="news-title" onclick="openSource('${category.linkid}')"><h2><a>${category.title[0]}</a> </h2></div>
+                                        <div class="news-content truncate" id="wrapper">${category.description[0].replace(/(<([^>]+)>)/ig,"")} </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                          
+                    </div>
+           </for>     
+        </div>      
+    </@body>
+</include>

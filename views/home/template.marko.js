@@ -31,7 +31,7 @@ function render(input, out) {
             out.w("</ul></div></div><div class=\"col l5 col m12 col s12\"><div class=\"sidbar-box z-depth-1\"><div class=\"sidebar-title\"></div><script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script><ins class=\"adsbygoogle\" style=\"display:block\" data-ad-client=\"ca-pub-9986443249641192\" data-ad-slot=\"6876975061\" data-ad-format=\"auto\"></ins><script>\r\n                                (adsbygoogle = window.adsbygoogle || []).push({});\r\n                                </script></div></div></div><div class=\"row\"><script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script><ins class=\"adsbygoogle\" style=\"display:inline-block;width:728px;height:90px\" data-ad-client=\"ca-pub-9986443249641192\" data-ad-slot=\"7597791061\"></ins><script>\r\n(adsbygoogle = window.adsbygoogle || []).push({});\r\n</script><div class=\"title\"><a href=\"/local\">Local</a></div>");
 
             marko_forEachWithStatusVar(data.local, function(category, loop) {
-              out.w("<div class=\"col l4 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
+              out.w("<div class=\"col l6 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
                 marko_escapeXml(category.meta.title) +
                 "</p></div><div class=\"news-image\"><img class=\"responsive-img\" onerror=\"this.style.display='none';\" src=\"" +
                 marko_escapeXmlAttr(category.media_image) +
@@ -52,7 +52,7 @@ function render(input, out) {
               out.w("<div class=\"row\"><script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script><ins class=\"adsbygoogle\" style=\"display:inline-block;width:728px;height:90px\" data-ad-client=\"ca-pub-9986443249641192\" data-ad-slot=\"7597791061\"></ins><script>\r\n(adsbygoogle = window.adsbygoogle || []).push({});\r\n</script><div class=\"title\"><a href=\"/world\">World</a></div>");
 
               marko_forEachWithStatusVar(data.international, function(category, loop) {
-                out.w("<div class=\"col l4 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
+                out.w("<div class=\"col l6 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
                   marko_escapeXml(category.meta.title) +
                   "</p></div><div class=\"news-image\"><img class=\"responsive-img\" onerror=\"this.style.display='none';\" src=\"" +
                   marko_escapeXmlAttr(category.media_image) +
@@ -74,7 +74,7 @@ function render(input, out) {
               out.w("<div class=\"row\"><script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script><ins class=\"adsbygoogle\" style=\"display:inline-block;width:728px;height:90px\" data-ad-client=\"ca-pub-9986443249641192\" data-ad-slot=\"7597791061\"></ins><script>\r\n(adsbygoogle = window.adsbygoogle || []).push({});\r\n</script><div class=\"title\"><a href=\"/business\">Business</a></div>");
 
               marko_forEachWithStatusVar(data.business, function(category, loop) {
-                out.w("<div class=\"col l4 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
+                out.w("<div class=\"col l6 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
                   marko_escapeXml(category.meta.title) +
                   "</p></div><div class=\"news-image\"><img class=\"responsive-img\" onerror=\"this.style.display='none';\" src=\"" +
                   marko_escapeXmlAttr(category.media_image) +
@@ -96,7 +96,7 @@ function render(input, out) {
               out.w("<div class=\"row\"><script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script><ins class=\"adsbygoogle\" style=\"display:inline-block;width:728px;height:90px\" data-ad-client=\"ca-pub-9986443249641192\" data-ad-slot=\"7597791061\"></ins><script>\r\n(adsbygoogle = window.adsbygoogle || []).push({});\r\n</script><div class=\"title\"><a href=\"/technology\">Technology</a></div>");
 
               marko_forEachWithStatusVar(data.technology, function(category, loop) {
-                out.w("<div class=\"col l4 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
+                out.w("<div class=\"col l6 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
                   marko_escapeXml(category.meta.title) +
                   "</p></div><div class=\"news-image\"><img class=\"responsive-img\" onerror=\"this.style.display='none';\" src=\"" +
                   marko_escapeXmlAttr(category.media_image) +
@@ -118,7 +118,7 @@ function render(input, out) {
               out.w("<div class=\"row\"><script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script><ins class=\"adsbygoogle\" style=\"display:inline-block;width:728px;height:90px\" data-ad-client=\"ca-pub-9986443249641192\" data-ad-slot=\"7597791061\"></ins><script>\r\n(adsbygoogle = window.adsbygoogle || []).push({});\r\n</script><div class=\"title\"><a href=\"/sports\">Sports</a></div>");
 
               marko_forEachWithStatusVar(data.sports, function(category, loop) {
-                out.w("<div class=\"col l4 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
+                out.w("<div class=\"col l6 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
                   marko_escapeXml(category.meta.title) +
                   "</p></div><div class=\"news-image\"><img class=\"responsive-img\" onerror=\"this.style.display='none';\" src=\"" +
                   marko_escapeXmlAttr(category.media_image) +
@@ -140,7 +140,7 @@ function render(input, out) {
               out.w("<div class=\"row\"><script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script><ins class=\"adsbygoogle\" style=\"display:inline-block;width:728px;height:90px\" data-ad-client=\"ca-pub-9986443249641192\" data-ad-slot=\"7597791061\"></ins><script>\r\n(adsbygoogle = window.adsbygoogle || []).push({});\r\n</script><div class=\"title\"><a href=\"/lifestyle\">Lifestyle</a></div>");
 
               marko_forEachWithStatusVar(data.lifestyle, function(category, loop) {
-                out.w("<div class=\"col l4 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
+                out.w("<div class=\"col l6 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
                   marko_escapeXml(category.meta.title) +
                   "</p></div><div class=\"news-image\"><img class=\"responsive-img\" onerror=\"this.style.display='none';\" src=\"" +
                   marko_escapeXmlAttr(category.media_image) +
@@ -162,7 +162,7 @@ function render(input, out) {
               out.w("<div class=\"row\"><script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script><ins class=\"adsbygoogle\" style=\"display:inline-block;width:728px;height:90px\" data-ad-client=\"ca-pub-9986443249641192\" data-ad-slot=\"7597791061\"></ins><script>\r\n(adsbygoogle = window.adsbygoogle || []).push({});\r\n</script><div class=\"title\"><a href=\"/entertainment\">Entertaiment</a></div>");
 
               marko_forEachWithStatusVar(data.entertainment, function(category, loop) {
-                out.w("<div class=\"col l4 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
+                out.w("<div class=\"col l6 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
                   marko_escapeXml(category.meta.title) +
                   "</p></div><div class=\"news-image\"><img class=\"responsive-img\" onerror=\"this.style.display='none';\" src=\"" +
                   marko_escapeXmlAttr(category.media_image) +
