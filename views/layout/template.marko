@@ -11,16 +11,14 @@
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-    <title>Latest Kenya News Headlines &amp; World News, Sports, Business, Technology, Lifestyle, Entertainment </title>
  <meta name="google-site-verification" content="FLqSB2HgUocaxLqZObEgrTCHk18mW1K5OQ7CgWoqz8M" />
 <meta name="msvalidate.01" content="9BE23A66E8E93A657BC60EE7426E55FB" />
-<meta property="og:description" content="Latest Kenya news  and International news Headlines in one place. Stream live news on Nipashe Media LIVE-TV">
-<meta property="twitter:title" content="Latest headlines from Kenya and International News Media => Politics, Business, Sports, World, Technology, Entertainment, Lifestyle"/>
-<meta name="twitter:description" content="Latest Kenya news and International news Headlines in one place. Stream live news on Nipashe Media LIVE-TV">
-<meta name="description" content="Latest Kenya news  and International news Headlines in one place. Stream live news on Nipashe Media LIVE-TV">
 <meta property="og:url" content="http://www.nipashemedia.com/">
 <meta property="vk:url" content="http://www.nipashemedia.com/">
 <meta property="fb:pages" content="1486705764971089">
+
+
+<include(input.meta)/>
 
 
     <!-- Jquery -->
@@ -66,6 +64,20 @@
 
 </head>
 <body>
+<!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>
+   
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.10&appId=468410750211613";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+</script>
+
 <script type="javascript">
     $(document).ready(function() {
 	$("#wrapper").dotdotdot({
@@ -109,13 +121,13 @@
 </script>
 <include("../header/template.marko")/>
   <!-- Main Wrapper -->
-  <div class="wrapper">
+<div class="wrapper">
     <div class="container">
 
     <include(input.body)/>
 
     </div>
-    </div>
+</div>
 
 <include("../footer/template.marko")/>
  
@@ -130,9 +142,11 @@
     <script src="../public/javascripts/init.js"></script>
 
 <script>
-   jQuery(document).ready(function() {
+  
+  jQuery(document).ready(function() {
   jQuery("time.timeago").timeago();
-});
+   
+    });
 
 function imgError(image) {
     console.log(image)
@@ -141,10 +155,18 @@ function imgError(image) {
     return true;
 }
 
-function openSource(url){
-    console.log(url)
+function openSource(url,title){
+    console.log(title)
+var dsp = title.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
+
+    console.log(dsp)
+   
     window.open(url)
 }
+
+
+    
+
 </script>
 </body>
  

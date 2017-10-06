@@ -1,9 +1,25 @@
 var express = require('express');
+const querystring = require('querystring');
 var router = express.Router();
 var home = require('../views/home/template.marko');
 var feedmodel = require('../model/feeds');
 var commonpage = require('../views/common/template.marko');
 /* GET home page. */
+
+
+var local = require('../views/local/template.marko');
+var international = require('../views/world/template.marko');
+var lifestyle = require('../views/lifestyle/template.marko');
+var technology = require('../views/technology/template.marko');
+var science = require('../views/science/template.marko');
+var entertainment = require('../views/entertainment/template.marko');
+var sports = require('../views/sports/template.marko');
+var business = require('../views/business/template.marko');
+
+
+
+
+
 
 router.get('/', function (req, res, next) {
 
@@ -30,16 +46,7 @@ router.get('/', function (req, res, next) {
 
 
 
-var pages = {
-  "local": require('../views/local/template.marko'),
-  "international": require('../views/world/template.marko'),
-  "lifestyle": require('../views/lifestyle/template.marko'),
-  "technology": require('../views/technology/template.marko'),
-  "science": require('../views/science/template.marko'),
-  "entertainment": require('../views/entertainment/template.marko'),
-  "sports": require('../views/sports/template.marko'),
-  "business": require('../views/business/template.marko')
-}
+
 
 /*router.get('/:feedkey', function (req, res, next) {
   var feedkey = req.params.feedkey;
@@ -58,24 +65,41 @@ var pages = {
   }) 
 })*/
 
+
+/*
 router.get('/:feedkey', function (req, res, next) {
+  var title = querystring.escape(req.query.title);
   
   var feedkey = req.params.feedkey;
   feedkey = feedkey == "world" ? "international" : feedkey;
-
-  var _page = pages[feedkey];
+  
+  var _page = feedkey;
   
   console.log(feedkey)
-  feedmodel.getFeed(feedkey, function (err, success) {
-    if (err) {
+  if (title!="undefined") {
+    console.log(title,"----hohohhoh-----")
+    
+    feedmodel.getFeedByTitle(feedkey, title, function (err, success) {
+      if (err) {
+        
+      } else {
+          console.log(success)
+        res.marko(_page,{feed:success})
+        //res.json(success)  
+      }
+    })
+  } else {
+    feedmodel.getFeed(feedkey, function (err, success) {
+      if (err) {
       
-    } else {
-        console.log(success.length)
-      res.marko(_page,{feed:success})
-      //res.json(success)  
-    }
-  }) 
-})
+      } else {
+        console.log("paaaagggeee",_page)
+        res.marko(_page, { feed: success })
+        //res.json(success)  
+      }
+    })
+  }  
+})*/
 
 
 module.exports = router;

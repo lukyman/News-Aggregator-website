@@ -20,7 +20,14 @@ var contact = require('./routes/contact-us');
 var privacy = require('./routes/privacy');
 var terms = require('./routes/terms-of-use');
 var about = require('./routes/about');
-
+var local = require('./routes/local');
+var world = require('./routes/world');
+var technology = require('./routes/technology');
+var business = require('./routes/business');
+var science = require('./routes/science');
+var lifestyle = require('./routes/lifestyle');
+var entertainment = require('./routes/entertainment');
+var sports = require('./routes/sports');
 var app = express();
 //sitemap.generate4(app,"local","world","sports","business","technology","lifestyle","entertainment","about-us","contact-us","terms-of-use","privacy-policy");
 app.use(markoExpress()); //enable res.marko(template, data)
@@ -70,7 +77,14 @@ app.use('/sitemap.xml', function (req, res) {
   
 })
 
-
+app.use('/local', local);
+app.use('/world', world);
+app.use('/technology', technology);
+app.use('/business', business);
+app.use('/lifestyle', lifestyle);
+app.use('/sports', sports);
+app.use('/entertainment', entertainment);
+app.use('/science', science);
 app.use('/news', common);
 app.use('/users', users);
 app.use('/about-us', about);
@@ -104,6 +118,6 @@ process.on('uncaughtException', function(err) {
     console.log(err)
 })
 
-app.listen(5000,"0.0.0.0");
-
+app.listen(5000);
+//app.listen(33759);
 module.exports = app;

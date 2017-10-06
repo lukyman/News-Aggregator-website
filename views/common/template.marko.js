@@ -1,15 +1,16 @@
-// Compiled using marko@4.2.8 - DO NOT EDIT
+// Compiled using marko@4.4.28 - DO NOT EDIT
 "use strict";
 
-var marko_template = module.exports = require("marko/html").t(__filename),
-    marko_loadTemplate = require("marko/runtime/helper-loadTemplate"),
+var marko_template = module.exports = require("marko/src/html").t(__filename),
+    marko_loadTemplate = require("marko/src/runtime/helper-loadTemplate"),
     template_template = marko_loadTemplate(require.resolve("../layout/template.marko")),
-    marko_forEachWithStatusVar = require("marko/runtime/helper-forEachWithStatusVar"),
-    marko_helpers = require("marko/runtime/html/helpers"),
+    marko_forEachWithStatusVar = require("marko/src/runtime/helper-forEachWithStatusVar"),
+    marko_helpers = require("marko/src/runtime/html/helpers"),
     marko_escapeXml = marko_helpers.x,
     marko_escapeXmlAttr = marko_helpers.xa,
+    hasRenderBodyKey = Symbol.for("hasRenderBody"),
     marko_loadTag = marko_helpers.t,
-    include_tag = marko_loadTag(require("marko/taglibs/core/include-tag"));
+    include_tag = marko_loadTag(require("marko/src/taglibs/core/include-tag"));
 
 function render(input, out) {
   var data = input;
@@ -21,7 +22,7 @@ function render(input, out) {
             out.w("<div class=\"row\">");
 
             marko_forEachWithStatusVar(data.feed, function(category, loop) {
-              out.w("<div class=\"col l4 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
+              out.w("<div class=\"col l12 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
                 marko_escapeXml(category.meta.title) +
                 "</p></div><div class=\"news-image\"><img class=\"responsive-img\" onerror=\"this.style.display='none';\" src=\"" +
                 marko_escapeXmlAttr(category.media_image) +
@@ -38,7 +39,8 @@ function render(input, out) {
 
             out.w(" </div>");
           }
-        }
+        },
+      [hasRenderBodyKey]: true
     }, out);
 }
 
@@ -47,6 +49,6 @@ marko_template._ = render;
 marko_template.meta = {
     tags: [
       "../layout/template.marko",
-      "marko/taglibs/core/include-tag"
+      "marko/src/taglibs/core/include-tag"
     ]
   };

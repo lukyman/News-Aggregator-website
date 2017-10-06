@@ -1,10 +1,25 @@
 <include("../layout/template.marko")>
-<@body>
+
+
+<@meta>
+<if (data.title != null && data.image !=null)>
+    <title>${data.title}</title>
+
+<meta property="title" content="${data.title}">
+<meta property="og:title" content="${data.title}">
+<meta property="twitter:title"  content="${data.title}"/>
+<meta name="twitter:image" content="${data.image}">
+<meta property="vk:image"  content="${data.image}">
+<meta property="og:image"  content="${data.image}">
+</if>
+</@meta>
+
+<@body class="col l8">
         <div class="row">
   
         <for(category in data.feed | status-var=loop) >
                    
-                    <div class="col l8 col m8 col s12">
+                    <div class="col l12 col m12 col s12">
                         <div class="card-container"> 
                         
                             <!-- Vertical News Box -->
@@ -12,6 +27,8 @@
                             <div class="media-name">
                              <p>${category.meta.title}</p>
                             </div>
+                              <div class="news-title" onclick="openSource('${category.linkid}')"><h2><a>${category.title[0]}</a> </h2></div>
+                              
                                     <!-- News Image -->    
                                 <div class="news-image">
                                         <img class="responsive-img" onerror="this.style.display='none';" src="${category.media_image}"  alt="news Image">
@@ -20,8 +37,13 @@
                                 <div class="news-description">
                                         <div class="news-time">
                                             <i class="fa fa-clock-o"></i> <time class="timeago" datetime="${category.pubDate[0]}"> </time>
+                                        <!-- Your share button code -->
+                                        <div class="fb-share-button" 
+                                            data-href="http://nipashemedia.com/sports?title=${category.title}" 
+                                            data-layout="button_count">
                                         </div>
-                                        <div class="news-title" onclick="openSource('${category.linkid}')"><h2><a>${category.title[0]}</a> </h2></div>
+                                       
+                                        </div>
                                         <div class="news-content truncate" id="wrapper">${category.description[0].replace(/(<([^>]+)>)/ig,"")} </div>
                                 </div>
                             </div>
@@ -30,7 +52,6 @@
                           
                     </div>
            </for>     
-        </div>
-       
+        </div>      
     </@body>
 </include>

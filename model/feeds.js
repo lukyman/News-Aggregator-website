@@ -15,6 +15,19 @@ exports.getFeed = function (feedkey, clb) {
         })
 }
 
+exports.getFeedByTitle = function (feedkey,title, clb) {
+    var fullquery = feedkey + "?title=" + title;
+    httpservice.getData(fullquery, function (err, success) {
+        if (err) {
+        clb(err,null)        
+        } else if (success) {
+        console.log("feedmodel",feedkey)
+            
+            clb(null,JSON.parse(success))
+        }
+        })
+}
+
 exports.getTopStories = function (clb) {
     var curr = 0, curr_ = 0;
     var topstories = {};

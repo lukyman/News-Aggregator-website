@@ -1,22 +1,39 @@
+
+
 <include("../layout/template.marko")>
+<@meta>
+    <title>Latest Kenya News Headlines &amp; World News, Sports, Business, Technology, Lifestyle, Entertainment </title>
+
+<meta property="og:description" content="Latest Kenya news  and International news Headlines in one place. Stream live news on Nipashe Media LIVE-TV">
+<meta property="twitter:title" content="Latest headlines from Kenya and International News Media => Politics, Business, Sports, World, Technology, Entertainment, Lifestyle"/>
+<meta name="twitter:description" content="Latest Kenya news and International news Headlines in one place. Stream live news on Nipashe Media LIVE-TV">
+<meta name="description" content="Latest Kenya news  and International news Headlines in one place. Stream live news on Nipashe Media LIVE-TV">
+
+</@meta>
 <@body>
-        <div class="row">
-            <div class="col l6 col m12 col s12 top-story">
+     
+ 
+            <div class="col l4 col m12 col s12 top-story">
                     <div class="sidbar-box z-depth-1">
                             <div class="sidebar-title"><h1>Top Stories</h1></div>
                              
                             <ul>
                             <for(category in data.local | status-var=loop) >
                                 <li>
+                                <div class="col l6 col m6 col s8">
                                     <a onclick="openSource('${category.linkid}')"><h1> ${category.title[0]}</h1></a>
+                               </div>
                                 </li>
                                 
                                  </for>
                             </ul>
                         </div>
+                     
+          
            </div>
 
-           <div class="col l5 col m12 col s12">
+ <div class="col l5 col m12 col s12">                  
+              <div class="fb-like"></div>   
                         <!-- Sidebar -->
                       <!--  <div class="sidbar-box z-depth-1">
                             <div class="sidebar-title"></div>
@@ -36,7 +53,7 @@
           </div>
 
                     
-        </div>
+        
 
         <div class="row">
 
@@ -51,7 +68,7 @@
                             <!-- Vertical News Box -->
                             <div class="news vertical ">
                             <div class="media-name">
-                             <p>${category.meta.title}</p>
+                             <p onload="formatfeedurl('category.meta.title')">${category.meta.title}</p>
                             </div>
                                     <!-- News Image -->    
                                 <div class="news-image">
@@ -61,34 +78,32 @@
                                 <div class="news-description">
                                         <div class="news-time">
                                             <i class="fa fa-clock-o"></i> <time class="timeago" datetime="${category.pubDate[0]}"> </time>
+                                          <!-- Your share button code -->
+                            <div class="fb-share-button" 
+                                data-href="http://nipashemedia.com/local?title=${category.title}" 
+                                data-layout="button_count">
+                            </div>
                                         </div>
-                                        <div class="news-title" onclick="openSource('${category.linkid}')"><h2><a>${category.title[0]}</a> </h2></div>
+                                        
+                                        <div class="news-title" onclick="openSource('${category.linkid}','${category.title[0]}')" onchange="formatfeedurl('${category.title[0]}')"><h2><a>${category.title[0]}</a> </h2></div>
                                         <div class="news-content truncate" id="wrapper">${category.description[0].replace(/(<([^>]+)>)/ig,"")} </div>
                                 </div>
                             </div>
                           
                         </div>
-                          
+                        
+                       
                     </div>                                                                                                                                                                                                                                                                                                                                   
-                   
                 </for>    
  
         </div>
 <if(data.international)>
         <div class="row">
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- horizontal-card -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:728px;height:90px"
-     data-ad-client="ca-pub-9986443249641192"
-     data-ad-slot="7597791061"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+        
         <div class="title"><a href="/world">World</a></div>
         <for(category in data.international | status-var=loop) >
                     
-                     <div class="col l6 col m6 col s12">
+                     <div class="col l6 col m6 col s8">
                         <div class="card-container"> 
                         
                             <!-- Vertical News Box -->
@@ -104,6 +119,11 @@
                                 <div class="news-description">
                                         <div class="news-time">
                                             <i class="fa fa-clock-o"></i> <time class="timeago" datetime="${category.pubDate[0]}"> </time>
+                                        <!-- Your share button code -->
+                            <div class="fb-share-button" 
+                                data-href="http://nipashemedia.com/world?title=${category.title}" 
+                                data-layout="button_count">
+                            </div>
                                         </div>
                                         <div class="news-title" onclick="openSource('${category.linkid}')"><h2><a>${category.title[0]}</a> </h2></div>
                                         <div class="news-content truncate" id="wrapper">${category.description[0].replace(/(<([^>]+)>)/ig,"")} </div>
@@ -126,7 +146,7 @@
         <div class="title"><a href="/business">Business</a></div>
         <for(category in data.business | status-var=loop) >
                     
-                    <div class="col l6 col m6 col s12">
+                    <div class="col l6 col m6 col s8">
                         <div class="card-container"> 
                         
                             <!-- Vertical News Box -->
@@ -142,6 +162,11 @@
                                 <div class="news-description">
                                         <div class="news-time">
                                             <i class="fa fa-clock-o"></i> <time class="timeago" datetime="${category.pubDate[0]}"> </time>
+                                           <!-- Your share button code -->
+                            <div class="fb-share-button" 
+                                data-href="http://nipashemedia.com/business?title=${category.title}" 
+                                data-layout="button_count">
+                            </div>
                                         </div>
                                         <div class="news-title" onclick="openSource('${category.linkid}')"><h2><a>${category.title[0]}</a> </h2></div>
                                         <div class="news-content truncate" id="wrapper">${category.description[0].replace(/(<([^>]+)>)/ig,"")} </div>
@@ -163,7 +188,7 @@
         <div class="title"><a href="/technology">Technology</a></div>
         <for(category in data.technology | status-var=loop) >
                     
-                     <div class="col l6 col m6 col s12">
+                     <div class="col l6 col m6 col s8">
                         <div class="card-container"> 
                         
                             <!-- Vertical News Box -->
@@ -179,6 +204,12 @@
                                 <div class="news-description">
                                         <div class="news-time">
                                             <i class="fa fa-clock-o"></i> <time class="timeago" datetime="${category.pubDate[0]}"> </time>
+                                           <!-- Your share button code -->
+                            <div class="fb-share-button" 
+                                data-href="http://nipashemedia.com/technology?title=${category.title}" 
+                                data-layout="button_count">
+                            </div>
+                                        
                                         </div>
                                         <div class="news-title" onclick="openSource('${category.linkid}')"><h2><a>${category.title[0]}</a> </h2></div>
                                         <div class="news-content truncate" id="wrapper">${category.description[0].replace(/(<([^>]+)>)/ig,"")} </div>
@@ -200,7 +231,7 @@
         <div class="title"><a href="/sports">Sports</a></div>
         <for(category in data.sports | status-var=loop) >
                     
-                    <div class="col l6 col m6 col s12">
+                    <div class="col l6 col m6 col s8">
                         <div class="card-container"> 
                         
                             <!-- Vertical News Box -->
@@ -216,6 +247,11 @@
                                 <div class="news-description">
                                         <div class="news-time">
                                             <i class="fa fa-clock-o"></i> <time class="timeago" datetime="${category.pubDate[0]}"> </time>
+                                           <!-- Your share button code -->
+                            <div class="fb-share-button" 
+                                data-href="http://nipashemedia.com/sports?title=${category.title}" 
+                                data-layout="button_count">
+                            </div>
                                         </div>
                                         <div class="news-title" onclick="openSource('${category.linkid}')"><h2><a>${category.title[0]}</a> </h2></div>
                                         <div class="news-content truncate" id="wrapper">${category.description[0].replace(/(<([^>]+)>)/ig,"")} </div>
@@ -236,7 +272,7 @@
         <div class="title"><a href="/lifestyle">Lifestyle</a></div>
         <for(category in data.lifestyle | status-var=loop) >
                     
-                   <div class="col l6 col m6 col s12">
+                   <div class="col l6 col m6 col s8">
                         <div class="card-container"> 
                         
                             <!-- Vertical News Box -->
@@ -252,6 +288,11 @@
                                 <div class="news-description">
                                         <div class="news-time">
                                             <i class="fa fa-clock-o"></i> <time class="timeago" datetime="${category.pubDate[0]}"> </time>
+                                           <!-- Your share button code -->
+                            <div class="fb-share-button" 
+                                data-href="http://nipashemedia.com/lifestyle?title=${category.title}" 
+                                data-layout="button_count">
+                            </div>
                                         </div>
                                         <div class="news-title" onclick="openSource('${category.linkid}')"><h2><a>${category.title[0]}</a> </h2></div>
                                         <div class="news-content truncate" id="wrapper">${category.description[0].replace(/(<([^>]+)>)/ig,"")} </div>
@@ -272,13 +313,14 @@
         <div class="title"><a href="/entertainment">Entertaiment</a></div>
         <for(category in data.entertainment | status-var=loop) >
                     
-                   <div class="col l6 col m6 col s12">
+                   <div class="col l6 col m6 col s8">
                         <div class="card-container"> 
                         
                             <!-- Vertical News Box -->
                             <div class="news vertical ">
                             <div class="media-name">
                              <p>${category.meta.title}</p>
+                            
                             </div>
                                     <!-- News Image -->    
                                 <div class="news-image">
@@ -288,6 +330,11 @@
                                 <div class="news-description">
                                         <div class="news-time">
                                             <i class="fa fa-clock-o"></i> <time class="timeago" datetime="${category.pubDate[0]}"> </time>
+                                         <!-- Your share button code -->
+                            <div class="fb-share-button" 
+                                data-href="http://nipashemedia.com/entertainment?title=${category.title}" 
+                                data-layout="button_count">
+                            </div>
                                         </div>
                                         <div class="news-title" onclick="openSource('${category.linkid}')"><h2><a>${category.title[0]}</a> </h2></div>
                                         <div class="news-content truncate" id="wrapper">${category.description[0].replace(/(<([^>]+)>)/ig,"")} </div>
@@ -303,5 +350,14 @@
                        
         </div>
     </if>
+
+   <script>
+
+    function formatfeedurl(title){
+        
+    
+    console.log(title.replace(" ", "-"))
+    }
+   </script>
     </@body>
 </include>

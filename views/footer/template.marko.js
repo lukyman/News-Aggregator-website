@@ -1,7 +1,7 @@
-// Compiled using marko@4.2.8 - DO NOT EDIT
+// Compiled using marko@4.4.28 - DO NOT EDIT
 "use strict";
 
-var marko_template = module.exports = require("marko/html").t(__filename);
+var marko_template = module.exports = require("marko/src/html").t(__filename);
 
 function render(input, out) {
   var data = input;
