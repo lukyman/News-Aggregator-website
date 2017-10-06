@@ -22,9 +22,9 @@ router.get('/', function (req, res, next) {
       } else {
         var title = success[0].meta.title + " | " + success[0].titleid;
         var image = success[0].media_image;
-        res.marko(page,{feed:success,title:title,image:image})
-      
-    })
+        res.marko(page, { feed: success, title: title, image: image })
+      }
+      });
       
   } else {
     feedmodel.getFeed(feedkey, function (err, success) {
