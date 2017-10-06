@@ -20,16 +20,10 @@ router.get('/', function (req, res, next) {
       if (err) {
         
       } else {
-        if (success[0]!=null) {
-          var title = success[0].meta.title + " | " + success[0].titleid;
-          var image = success[0].media_image;
-          res.marko(page,{feed:success,title:title,image:image})
-          
-        } else {
-          res.marko(page,{feed:success})
-         
-        }        
-      }
+        var title = success[0].meta.title + " | " + success[0].titleid;
+        var image = success[0].media_image;
+        res.marko(page,{feed:success,title:title,image:image})
+      
     })
       
   } else {
