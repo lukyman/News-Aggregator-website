@@ -63,5 +63,25 @@ exports.getTopStories = function (clb) {
 }
 
 
+exports.getFeedBySize = function (feedkey, size, clb) {
+    var final_endpoint = feedkey + "/" + size;
     
+      
+         httpservice.getData(final_endpoint, function (error, success) {
+
+             curr++;
+     
+             if (error) {
+            // clb(error, null)
+     
+             } else if (success) {
+             
+             clb(null,JSON.parse(success))
+             
+             } 
+
+
+             })
+
+    }
 

@@ -24,187 +24,107 @@ function render(input, out) {
         },
       body: {
           renderBody: function renderBody(out) {
-            out.w("<div class=\"col l4 col m12 col s12 top-story\"><div class=\"sidbar-box z-depth-1\"><div class=\"sidebar-title\"><h1>Top Stories</h1></div><ul>");
+            out.w("<div class=\"col l5 col m12 col s12\"> <div class=\"fb-like\"></div> </div><div class=\"row\"><div class=\"col l12 m12 s12\">");
 
-            marko_forEachWithStatusVar(data.local, function(category, loop) {
-              out.w("<li><div class=\"col l6 col m6 col s8\"><a onclick=\"openSource('" +
-                marko_escapeXmlAttr(category.linkid) +
-                "')\"><h1> " +
-                marko_escapeXml(category.title[0]) +
-                "</h1></a></div></li>");
-            });
+            if (data.local) {
+              out.w("<div class=\"col l8 m10 s12 \"><div class=\"sidbar-box z-depth-1\"><div class=\"sidebar-title\">Local</div><div class=\"news-sidebar\"><div class=\"row\">");
 
-            out.w("</ul></div></div><div class=\"col l5 col m12 col s12\"> <div class=\"fb-like\"></div> </div><div class=\"row\"><div class=\"title\"><a href=\"/local\">Local</a></div>");
-
-            marko_forEachWithStatusVar(data.local, function(category, loop) {
-              out.w("<div class=\"col l6 col m6 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p onload=\"formatfeedurl('category.meta.title')\">" +
-                marko_escapeXml(category.meta.title) +
-                "</p></div><div class=\"news-image\"><img class=\"responsive-img\" onerror=\"this.style.display='none';\" src=\"" +
-                marko_escapeXmlAttr(category.media_image) +
-                "\" alt=\"news Image\"></div><div class=\"news-description\"><div class=\"news-time\"><i class=\"fa fa-clock-o\"></i> <time class=\"timeago\" datetime=\"" +
-                marko_escapeXmlAttr(category.pubDate[0]) +
-                "\"> </time><div class=\"fb-share-button\" data-href=\"http://nipashemedia.com/local?title=" +
-                marko_escapeXmlAttr(category.title) +
-                "\" data-layout=\"button_count\"></div></div><div class=\"news-title\" onclick=\"openSource('" +
-                marko_escapeXmlAttr(category.linkid) +
-                "','" +
-                marko_escapeXmlAttr(category.title[0]) +
-                "')\" onchange=\"formatfeedurl('" +
-                marko_escapeXmlAttr(category.title[0]) +
-                "')\"><h2><a>" +
-                marko_escapeXml(category.title[0]) +
-                "</a> </h2></div><div class=\"news-content truncate\" id=\"wrapper\">" +
-                marko_escapeXml(category.description[0].replace(/(<([^>]+)>)/gi, "")) +
-                " </div></div></div></div></div> ");
-            });
-
-            out.w(" </div>");
-
-            if (data.international) {
-              out.w("<div class=\"row\"><div class=\"title\"><a href=\"/world\">World</a></div>");
-
-              marko_forEachWithStatusVar(data.international, function(category, loop) {
-                out.w("<div class=\"col l6 col m6 col s8\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
+              marko_forEachWithStatusVar(data.local, function(category, loop) {
+                out.w("<div class=\"col l6 col m6 col s12\"><div class=\"news-box\"><div class=\"news-detail\"><div class=\"news-category\"><div><p class=\"word-wrap\">" +
                   marko_escapeXml(category.meta.title) +
-                  "</p></div><div class=\"news-image\"><img class=\"responsive-img\" onerror=\"this.style.display='none';\" src=\"" +
-                  marko_escapeXmlAttr(category.media_image) +
-                  "\" alt=\"news Image\"></div><div class=\"news-description\"><div class=\"news-time\"><i class=\"fa fa-clock-o\"></i> <time class=\"timeago\" datetime=\"" +
+                  "</p></div><div class=\"news-time\"><i class=\"fa fa-clock-o\"></i> <time class=\"timeago\" datetime=\"" +
                   marko_escapeXmlAttr(category.pubDate[0]) +
-                  "\"> </time><div class=\"fb-share-button\" data-href=\"http://nipashemedia.com/world?title=" +
-                  marko_escapeXmlAttr(category.title) +
-                  "\" data-layout=\"button_count\"></div></div><div class=\"news-title\" onclick=\"openSource('" +
-                  marko_escapeXmlAttr(category.linkid) +
-                  "')\"><h2><a>" +
+                  "\"> </time></div></div><div class=\"news-title\"><a href=\"/local?title=" +
+                  marko_escapeXmlAttr(category.title[0]) +
+                  "\">" +
                   marko_escapeXml(category.title[0]) +
-                  "</a> </h2></div><div class=\"news-content truncate\" id=\"wrapper\">" +
-                  marko_escapeXml(category.description[0].replace(/(<([^>]+)>)/gi, "")) +
-                  " </div></div></div></div></div>");
+                  "</a></div></div></div></div>");
               });
 
-              out.w(" </div>");
+              out.w("</div></div></div></div>");
             }
 
             if (data.business) {
-              out.w("<div class=\"row\"><div class=\"title\"><a href=\"/business\">Business</a></div>");
+              out.w("<div class=\"col l4 col m12 col s12\"><div class=\"sidbar-box z-depth-1\"><div class=\"sidebar-title\">Business</div><div class=\"news-sidebar\">");
 
               marko_forEachWithStatusVar(data.business, function(category, loop) {
-                out.w("<div class=\"col l6 col m6 col s8\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
-                  marko_escapeXml(category.meta.title) +
-                  "</p></div><div class=\"news-image\"><img class=\"responsive-img\" onerror=\"this.style.display='none';\" src=\"" +
-                  marko_escapeXmlAttr(category.media_image) +
-                  "\" alt=\"news Image\"></div><div class=\"news-description\"><div class=\"news-time\"><i class=\"fa fa-clock-o\"></i> <time class=\"timeago\" datetime=\"" +
-                  marko_escapeXmlAttr(category.pubDate[0]) +
-                  "\"> </time><div class=\"fb-share-button\" data-href=\"http://nipashemedia.com/business?title=" +
-                  marko_escapeXmlAttr(category.title) +
-                  "\" data-layout=\"button_count\"></div></div><div class=\"news-title\" onclick=\"openSource('" +
-                  marko_escapeXmlAttr(category.linkid) +
-                  "')\"><h2><a>" +
-                  marko_escapeXml(category.title[0]) +
-                  "</a> </h2></div><div class=\"news-content truncate\" id=\"wrapper\">" +
-                  marko_escapeXml(category.description[0].replace(/(<([^>]+)>)/gi, "")) +
-                  " </div></div></div></div></div>");
+                if (loop.getIndex() < 4) {
+                  out.w("<div class=\"news-box\"><div class=\"news-detail\"><div class=\"news-category\"><div><p class=\"word-wrap\">" +
+                    marko_escapeXml(category.meta.title) +
+                    "</p></div><div class=\"news-time\"><i class=\"fa fa-clock-o\"></i> <time class=\"timeago\" datetime=\"" +
+                    marko_escapeXmlAttr(category.pubDate[0]) +
+                    "\"> </time></div></div><div class=\"news-title\"><a href=\"/business?title=" +
+                    marko_escapeXmlAttr(category.title[0]) +
+                    "\">" +
+                    marko_escapeXml(category.title[0]) +
+                    "</a></div></div></div>");
+                }
               });
 
-              out.w(" </div>");
+              out.w("</div></div></div>");
+            }
+
+            out.w("</div></div><br><div class=\"row\"><div class=\"col l12 m12 s12\">");
+
+            if (data.world) {
+              out.w("<div class=\"col l8 m8 s12 z-depth-1\"><div class=\"sidebar-title\">World</div><div class=\"news-sidebar\">");
+
+              marko_forEachWithStatusVar(data.world, function(category, loop) {
+                out.w("<div class=\"col l6 col m6 col s12\"><div class=\"news-box\"><div class=\"news-detail\"><div class=\"news-category\"><div><p class=\"word-wrap\">" +
+                  marko_escapeXml(category.meta.title) +
+                  "</p></div><div class=\"news-time\"><i class=\"fa fa-clock-o\"></i> <time class=\"timeago\" datetime=\"" +
+                  marko_escapeXmlAttr(category.pubDate[0]) +
+                  "\"> </time></div></div><div class=\"news-title\"><a href=\"/world?title=" +
+                  marko_escapeXmlAttr(category.title[0]) +
+                  "\">" +
+                  marko_escapeXml(category.title[0]) +
+                  "</a></div></div></div></div>");
+              });
+
+              out.w("</div> </div>");
             }
 
             if (data.technology) {
-              out.w("<div class=\"row\"><div class=\"title\"><a href=\"/technology\">Technology</a></div>");
+              out.w("<div class=\"col l4 col m12 col s12\"><div class=\"sidbar-box z-depth-1\"><div class=\"sidebar-title\">Technology</div><div class=\"news-sidebar\">");
 
               marko_forEachWithStatusVar(data.technology, function(category, loop) {
-                out.w("<div class=\"col l6 col m6 col s8\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
-                  marko_escapeXml(category.meta.title) +
-                  "</p></div><div class=\"news-image\"><img class=\"responsive-img\" onerror=\"this.style.display='none';\" src=\"" +
-                  marko_escapeXmlAttr(category.media_image) +
-                  "\" alt=\"news Image\"></div><div class=\"news-description\"><div class=\"news-time\"><i class=\"fa fa-clock-o\"></i> <time class=\"timeago\" datetime=\"" +
-                  marko_escapeXmlAttr(category.pubDate[0]) +
-                  "\"> </time><div class=\"fb-share-button\" data-href=\"http://nipashemedia.com/technology?title=" +
-                  marko_escapeXmlAttr(category.title) +
-                  "\" data-layout=\"button_count\"></div></div><div class=\"news-title\" onclick=\"openSource('" +
-                  marko_escapeXmlAttr(category.linkid) +
-                  "')\"><h2><a>" +
-                  marko_escapeXml(category.title[0]) +
-                  "</a> </h2></div><div class=\"news-content truncate\" id=\"wrapper\">" +
-                  marko_escapeXml(category.description[0].replace(/(<([^>]+)>)/gi, "")) +
-                  " </div></div></div></div></div>");
+                if (loop.getIndex() < 4) {
+                  out.w("<div class=\"news-box\"><div class=\"news-detail\"><div class=\"news-category\"><div><p class=\"word-wrap\">" +
+                    marko_escapeXml(category.meta.title) +
+                    "</p></div><div class=\"news-time\"><i class=\"fa fa-clock-o\"></i> <time class=\"timeago\" datetime=\"" +
+                    marko_escapeXmlAttr(category.pubDate[0]) +
+                    "\"> </time></div></div><div class=\"news-title\"><a href=\"/business?title=" +
+                    marko_escapeXmlAttr(category.title[0]) +
+                    "\">" +
+                    marko_escapeXml(category.title[0]) +
+                    "</a></div></div></div>");
+                }
               });
 
-              out.w(" </div>");
+              out.w("</div></div></div>");
             }
+
+            out.w("</div></div> <br><div class=\"row\"><div class=\"col l12 m12 s12\">");
 
             if (data.sports) {
-              out.w("<div class=\"row\"><div class=\"title\"><a href=\"/sports\">Sports</a></div>");
+              out.w("<div class=\"col l12 m12 s12 z-depth-1\"><div class=\"sidebar-title\">Sports</div><div class=\"news-sidebar\">");
 
               marko_forEachWithStatusVar(data.sports, function(category, loop) {
-                out.w("<div class=\"col l6 col m6 col s8\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
+                out.w("<div class=\"col l6 col m6 col s12\"><div class=\"news-box\"><div class=\"news-detail\"><div class=\"news-category\"><div><p class=\"word-wrap\">" +
                   marko_escapeXml(category.meta.title) +
-                  "</p></div><div class=\"news-image\"><img class=\"responsive-img\" onerror=\"this.style.display='none';\" src=\"" +
-                  marko_escapeXmlAttr(category.media_image) +
-                  "\" alt=\"news Image\"></div><div class=\"news-description\"><div class=\"news-time\"><i class=\"fa fa-clock-o\"></i> <time class=\"timeago\" datetime=\"" +
+                  "</p></div><div class=\"news-time\"><i class=\"fa fa-clock-o\"></i> <time class=\"timeago\" datetime=\"" +
                   marko_escapeXmlAttr(category.pubDate[0]) +
-                  "\"> </time><div class=\"fb-share-button\" data-href=\"http://nipashemedia.com/sports?title=" +
-                  marko_escapeXmlAttr(category.title) +
-                  "\" data-layout=\"button_count\"></div></div><div class=\"news-title\" onclick=\"openSource('" +
-                  marko_escapeXmlAttr(category.linkid) +
-                  "')\"><h2><a>" +
+                  "\"> </time></div></div><div class=\"news-title\"><a href=\"/world?title=" +
+                  marko_escapeXmlAttr(category.title[0]) +
+                  "\">" +
                   marko_escapeXml(category.title[0]) +
-                  "</a> </h2></div><div class=\"news-content truncate\" id=\"wrapper\">" +
-                  marko_escapeXml(category.description[0].replace(/(<([^>]+)>)/gi, "")) +
-                  " </div></div></div></div></div> ");
+                  "</a></div></div></div></div>");
               });
 
-              out.w(" </div>");
+              out.w("</div> </div>");
             }
 
-            if (data.lifestyle) {
-              out.w("<div class=\"row\"><div class=\"title\"><a href=\"/lifestyle\">Lifestyle</a></div>");
-
-              marko_forEachWithStatusVar(data.lifestyle, function(category, loop) {
-                out.w("<div class=\"col l6 col m6 col s8\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
-                  marko_escapeXml(category.meta.title) +
-                  "</p></div><div class=\"news-image\"><img class=\"responsive-img\" onerror=\"this.style.display='none';\" src=\"" +
-                  marko_escapeXmlAttr(category.media_image) +
-                  "\" alt=\"news Image\"></div><div class=\"news-description\"><div class=\"news-time\"><i class=\"fa fa-clock-o\"></i> <time class=\"timeago\" datetime=\"" +
-                  marko_escapeXmlAttr(category.pubDate[0]) +
-                  "\"> </time><div class=\"fb-share-button\" data-href=\"http://nipashemedia.com/lifestyle?title=" +
-                  marko_escapeXmlAttr(category.title) +
-                  "\" data-layout=\"button_count\"></div></div><div class=\"news-title\" onclick=\"openSource('" +
-                  marko_escapeXmlAttr(category.linkid) +
-                  "')\"><h2><a>" +
-                  marko_escapeXml(category.title[0]) +
-                  "</a> </h2></div><div class=\"news-content truncate\" id=\"wrapper\">" +
-                  marko_escapeXml(category.description[0].replace(/(<([^>]+)>)/gi, "")) +
-                  " </div></div></div></div></div>");
-              });
-
-              out.w(" </div>");
-            }
-
-            if (data.entertainment) {
-              out.w("<div class=\"row\"><div class=\"title\"><a href=\"/entertainment\">Entertaiment</a></div>");
-
-              marko_forEachWithStatusVar(data.entertainment, function(category, loop) {
-                out.w("<div class=\"col l6 col m6 col s8\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
-                  marko_escapeXml(category.meta.title) +
-                  "</p></div><div class=\"news-image\"><img class=\"responsive-img\" onerror=\"this.style.display='none';\" src=\"" +
-                  marko_escapeXmlAttr(category.media_image) +
-                  "\" alt=\"news Image\"></div><div class=\"news-description\"><div class=\"news-time\"><i class=\"fa fa-clock-o\"></i> <time class=\"timeago\" datetime=\"" +
-                  marko_escapeXmlAttr(category.pubDate[0]) +
-                  "\"> </time><div class=\"fb-share-button\" data-href=\"http://nipashemedia.com/entertainment?title=" +
-                  marko_escapeXmlAttr(category.title) +
-                  "\" data-layout=\"button_count\"></div></div><div class=\"news-title\" onclick=\"openSource('" +
-                  marko_escapeXmlAttr(category.linkid) +
-                  "')\"><h2><a>" +
-                  marko_escapeXml(category.title[0]) +
-                  "</a> </h2></div><div class=\"news-content truncate\" id=\"wrapper\">" +
-                  marko_escapeXml(category.description[0].replace(/(<([^>]+)>)/gi, "")) +
-                  " </div></div></div></div></div>");
-              });
-
-              out.w(" </div>");
-            }
-
-            out.w("<script>\r\n\r\n    function formatfeedurl(title){\r\n        \r\n    \r\n    console.log(title.replace(\" \", \"-\"))\r\n    }\r\n   </script>");
+            out.w("</div></div> <script>\r\n\r\n    function formatfeedurl(title){\r\n        \r\n    \r\n    console.log(title.replace(\" \", \"-\"))\r\n    }\r\n   </script>");
           }
         },
       [hasRenderBodyKey]: true

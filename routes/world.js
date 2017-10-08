@@ -5,7 +5,7 @@ var home = require('../views/home/template.marko');
 var feedmodel = require('../model/feeds');
 var page = require('../views/world/template.marko');
 var feedkey = "international";
-
+var detailpage = require('../views/detail/template.marko');
 
 router.get('/', function (req, res, next) {
   var title = querystring.escape(req.query.title);
@@ -19,7 +19,7 @@ router.get('/', function (req, res, next) {
       } else {
           var title = success[0].meta.title + " | " + success[0].titleid;
           var image = success[0].media_image;
-          res.marko(page,{feed:success,title:title,image:image})
+          res.marko(detailpage,{feed:success,title:title,image:image})
           
         
          

@@ -7,7 +7,7 @@
   /* use this value to count block height */
   line-height: 1.8em;
   /* max-height = line-height (1.2) * lines max number (3) */
-  max-height: 4.8em; 
+  max-height: 5.8em; 
   /* fix problem when last visible word doesn't adjoin right side  */
   text-align: justify;  
   /* place for '...' */
@@ -42,7 +42,7 @@
 }
 
 .news.vertical {
-    min-height: 245px;
+    min-height: auto;
     margin-bottom: 10px;
     height: 100%;
     border: none;
@@ -94,23 +94,38 @@ background: antiquewhite;
     
 }
 
-.card-container time{
+.word-wrap{
+  overflow-wrap:break-word;
+  line-height: initial;
+}
+
+time{
   color: darkred;
 }
 
+.news-time{
+  margin: 0px;
+}
+.news-box .news-category {
+  line-height: 0;
+}
 @media only screen and (min-width:1025px){
 .container {
    --padding: 0 1.5rem;
     --margin: 0 auto;
     --max-width: 1149px;
     width: auto;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 
 }
-
+.news-title > a {
+ 
+  margin-bottom: 0;
+ 
+}
 .new-card{
   margin-left: 10%;
 	margin-right: 10%;
@@ -120,13 +135,15 @@ background: antiquewhite;
   --height: 34px;
 }
 body{
-  background:#fff;
+ background:#FFFFFF;
 }
 .top-story h1{
-    font-size: 16px;
-    line-height: 19px;
-    font-weight: bold;
+    font-size: 12px;
+    line-height: 12px;
     letter-spacing: 2px;
+}
+.show-read-more .more-text{
+  display: none;
 }
 header.header-fix {
     height: 68px;
@@ -152,12 +169,47 @@ nav{
   line-height: 30px;
 }
 .sidbar-box a {
-    
-    padding: 0px 14px;
+  display: contents;
+  font-size: 14px;
+  padding: 0;
 }
-
+.top-story li {
+  padding: 0px;
+  height: auto;
+}
+.headline-meta{
+  font-size: 10px;
+}
 .fb-share-button{
   padding: 20px;
+}
+
+.sidebar-title {
+  border-bottom: 1px solid #eaeaea;
+  color: #3f51b5;
+  font-size: 17px;
+  font-weight: 500;
+  padding: 1px 22px;
+  text-transform: uppercase;
+  text-align: center;
+}
+.news-description {
+  padding: 0px 12px;
+}
+.news-box {
+  border-bottom: 1px groove #998c8c;
+  padding-bottom: 11px;
+  padding-top: inherit;
+  
+}
+.news-box:hover {
+  background: aliceblue;
+
+}
+
+iframe{
+  width: 100%;
+  height: 100%;
 }
 /*
 // in the second loop

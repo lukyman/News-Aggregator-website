@@ -36,10 +36,11 @@
     <!-- Font Awesome Css -->
     <link href="../public/stylesheets/font-awesome.min.css" type="text/css" rel="stylesheet">
     
-    <!-- Slider Css -->
+    <!-- Slider Css 
     <link href="../public/stylesheets/pgwslider.css" type="text/css" rel="stylesheet">
     <link rel='../public/stylesheet' id='camera-css'  href='stylesheets/camera.css' type='text/css' media='all'>
-    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  --> 
+   <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -82,7 +83,7 @@
     $(document).ready(function() {
 	$("#wrapper").dotdotdot({
 		/*	The text to add as ellipsis. */
-		ellipsis	: '... ',
+		ellipsis	: '(read more)',
  
 		/*	How to cut off the text/html: 'word'/'letter'/'children' */
 		wrap		: 'word',
@@ -98,7 +99,7 @@
 	
 		/*	Optionally set a max-height, can be a number or function.
 			If null, the height will be measured. */
-		height		: 3,
+		height		: 4,
  
 		/*	Deviation for the height-option. */
 		tolerance	: 0,
@@ -138,6 +139,7 @@
     <script src="../public/javascripts/jquery.touchSwipe.min.js"></script>
     <script src="../public/javascripts/jquery.liquid-slider.js"></script>
     <script type='text/javascript' src='../public/javascripts/camera.js'></script>
+    
     <!-- Custom Js -->
     <script src="../public/javascripts/init.js"></script>
 
@@ -165,6 +167,23 @@ var dsp = title.toLowerCase().replace(/ /g,'-').replace(/[^\w-]+/g,'');
 }
 
 
+$(document).ready(function(){
+	var maxLength = 400;
+	$(".show-read-more").each(function(){
+		var myStr = $(this).text();
+		if($.trim(myStr).length > maxLength){
+			var newStr = myStr.substring(0, maxLength);
+			var removedStr = myStr.substring(maxLength, $.trim(myStr).length);
+			$(this).empty().html(newStr);
+			$(this).append(' <a href="javascript:void(0);" class="read-more">read more...</a>');
+			$(this).append('<span class="more-text">' + removedStr + '</span>');
+		}
+	});
+	$(".read-more").click(function(){
+		$(this).siblings(".more-text").contents().unwrap();
+		$(this).remove();
+	});
+});
     
 
 </script>

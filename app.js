@@ -28,6 +28,8 @@ var science = require('./routes/science');
 var lifestyle = require('./routes/lifestyle');
 var entertainment = require('./routes/entertainment');
 var sports = require('./routes/sports');
+var framed_article = require('./routes/framed_article');
+
 var app = express();
 //sitemap.generate4(app,"local","world","sports","business","technology","lifestyle","entertainment","about-us","contact-us","terms-of-use","privacy-policy");
 app.use(markoExpress()); //enable res.marko(template, data)
@@ -91,6 +93,7 @@ app.use('/about-us', about);
 app.use('/contact-us', contact);
 app.use('/privacy-policy', privacy);
 app.use('/terms-of-use', terms);
+app.use('/article',framed_article)
 
 
 

@@ -39,19 +39,24 @@ function render(input, out) {
           }
         },
       body: {
+          class: "col l8",
           renderBody: function renderBody(out) {
             out.w("<div class=\"row\">");
 
             marko_forEachWithStatusVar(data.feed, function(category, loop) {
               out.w("<div class=\"col l8 col m8 col s12\"><div class=\"card-container\"> <div class=\"news vertical \"><div class=\"media-name\"><p>" +
                 marko_escapeXml(category.meta.title) +
-                "</p></div><div class=\"news-detail\"><div class=\"news-title\"><a href=\"?title=" +
-                marko_escapeXmlAttr(category.title[0]) +
-                "\">" +
+                "</p></div><div class=\"news-title\"><h2><a>" +
                 marko_escapeXml(category.title[0]) +
-                "</a></div><div class=\"news-time\"><i class=\"fa fa-clock-o\"></i> <time class=\"timeago\" datetime=\"" +
+                "</a> </h2></div><div class=\"news-description\"><div class=\"news-time\"><i class=\"fa fa-clock-o\"></i> <time class=\"timeago\" datetime=\"" +
                 marko_escapeXmlAttr(category.pubDate[0]) +
-                "\"> </time></div></div></div></div></div>");
+                "\"> </time><div class=\"fb-share-button\" data-href=\"http://nipashemedia.com/local?title=" +
+                marko_escapeXmlAttr(category.title) +
+                "\" data-layout=\"button_count\"></div></div><div class=\"news-content truncate\" id=\"wrapper\">" +
+                marko_escapeXml(category.description[0].replace(/(<([^>]+)>)/gi, "")) +
+                " </div><a href=\"/article?source=" +
+                marko_escapeXmlAttr(category.linkid) +
+                "\" target=\"_blank\">read more >></a></div></div></div></div>");
             });
 
             out.w(" </div> ");
