@@ -55,9 +55,9 @@ function render(input, out) {
                     marko_escapeXmlAttr(category.pubDate[0]) +
                     "\"> </time></div></div><div class=\"news-title\"><a href=\"/business?title=" +
                     marko_escapeXmlAttr(category.title[0]) +
-                    "\"><h1>" +
+                    "\">" +
                     marko_escapeXml(category.title[0]) +
-                    "</h1></a></div></div></div>");
+                    "</a></div></div></div>");
                 }
               });
 
@@ -76,9 +76,9 @@ function render(input, out) {
                   marko_escapeXmlAttr(category.pubDate[0]) +
                   "\"> </time></div></div><div class=\"news-title\"><a href=\"/world?title=" +
                   marko_escapeXmlAttr(category.title[0]) +
-                  "\"><h1>" +
+                  "\">" +
                   marko_escapeXml(category.title[0]) +
-                  "</h1></a></div></div></div></div>");
+                  "</a></div></div></div></div>");
               });
 
               out.w("</div> </div>");
@@ -95,9 +95,9 @@ function render(input, out) {
                     marko_escapeXmlAttr(category.pubDate[0]) +
                     "\"> </time></div></div><div class=\"news-title\"><a href=\"/business?title=" +
                     marko_escapeXmlAttr(category.title[0]) +
-                    "\"><h1>" +
+                    "\">" +
                     marko_escapeXml(category.title[0]) +
-                    "</h1></a></div></div></div>");
+                    "</a></div></div></div>");
                 }
               });
 
@@ -116,9 +116,9 @@ function render(input, out) {
                   marko_escapeXmlAttr(category.pubDate[0]) +
                   "\"> </time></div></div><div class=\"news-title\"><a href=\"/world?title=" +
                   marko_escapeXmlAttr(category.title[0]) +
-                  "\"><h1>" +
+                  "\">" +
                   marko_escapeXml(category.title[0]) +
-                  "</h1></a></div></div></div></div>");
+                  "</a></div></div></div></div>");
               });
 
               out.w("</div> </div>");
