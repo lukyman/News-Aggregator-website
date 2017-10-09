@@ -28,12 +28,6 @@ function render(input, out) {
                 marko_escapeXmlAttr(data.title) +
                 "\"><meta property=\"twitter:title\" content=\"" +
                 marko_escapeXmlAttr(data.title) +
-                "\"><meta name=\"twitter:image\" content=\"" +
-                marko_escapeXmlAttr(data.image) +
-                "\"><meta property=\"vk:image\" content=\"" +
-                marko_escapeXmlAttr(data.image) +
-                "\"><meta property=\"og:image\" content=\"" +
-                marko_escapeXmlAttr(data.image) +
                 "\">");
             }
           }
