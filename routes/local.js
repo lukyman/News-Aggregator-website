@@ -11,18 +11,17 @@ var page = require('../views/local/template.marko');
 
 
 router.get('/', function (req, res, next) {
-  var title = querystring.escape(req.query.title);
+  var title = req.query.title;
   
- 
-  if (title!=='undefined') {
+  if (title!==undefined) {
     console.log(title,"----hohohhoh-----")
     
     feedmodel.getFeedByTitle(feedkey, title, function (err, success) {
       if (err) {
         
       } else {
-        var title = success[0].meta.title + " | " + success[0].titleid;
-        var image = success[0].media_image;
+        var title =  success[0].meta.title ==null?null:success[0].meta.title + " | " + success[0].titleid;
+        var image = success[0].media_image ==null?null:success[0].media_image;
         res.marko(detailpage, { feed: success, title: title, image: image })
       }
       });

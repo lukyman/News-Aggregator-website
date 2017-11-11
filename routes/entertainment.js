@@ -8,10 +8,10 @@ var feedkey = "entertainment";
 var detailpage = require('../views/detail/template.marko');
 
 router.get('/', function (req, res, next) {
-  var title = querystring.escape(req.query.title);
+  var title = req.query.title;
   
-  if (title!="undefined") {
-    console.log(title,"----hohohhoh-----")
+  if (title!==undefined) {
+     console.log(title,"----hohohhoh-----")
     
     feedmodel.getFeedByTitle(feedkey, title, function (err, success) {
       if (err) {
