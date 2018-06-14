@@ -11,8 +11,6 @@ router.get('/', function (req, res, next) {
   var title = req.query.title;
   
   if (title!==undefined) {
-    console.log(title,"----hohohhoh-----")
-    
     feedmodel.getFeedByTitle(feedkey, title, function (err, success) {
       if (err) {
         

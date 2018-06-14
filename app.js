@@ -35,7 +35,7 @@ var app = express();
 app.use(markoExpress()); //enable res.marko(template, data)
 
 var sitemap = sm.createSitemap({
-  hostname: "http://nipashemedia.com",
+  hostname: "http://localhost:5000",
   cacheTime: 600000,
   urls: [
     { url: "/local", changefreq: 'daily' },

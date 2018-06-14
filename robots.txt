@@ -1,4 +1,4 @@
 
 
 
-Sitemap: http://nipashemedia.com/sitemap.xml
+Sitemap: http://lcalhost:5000/sitemap.xml

@@ -1,6 +1,6 @@
 var request = require("request");
-var baseurl = "http://iasa.io/feeds/";
-//var baseurl = "http://localhost:4000/feeds/";
+
+var baseurl = "http://localhost:4000/feeds/";
 
    exports.getData = function (endpoint, clb) {
        var fullquery = baseurl + endpoint;
